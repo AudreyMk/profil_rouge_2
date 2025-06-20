@@ -55,6 +55,7 @@ def search_bluesky_posts(query="Bluesky", limit=100, lang=None):
 
                     info = {
                         'post_uri': post_view.uri,
+                        'post_url': f"https://bsky.app/profile/{author.handle}/post/{post_view.uri.split('/')[-1]}",
                         'post_cid': post_view.cid,
                         'text': getattr(record, 'text', '').replace('\n', ' ').strip(),
                         'createdAt_post': getattr(record, 'created_at', ''),
